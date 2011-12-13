@@ -1,23 +1,23 @@
 class foreman::params {
 
 # Basic configurations
-  $foreman_url  = "http://${fqdn}"
+  $foreman_url  = extlookup (foreman_url,"http://${::fqdn}")
   # Should foreman act as an external node classifier (manage puppet class assignments)
-  $enc          = true
+  $enc          = extlookup (foreman_enc,"true")
   # Should foreman receive reports from puppet
-  $reports      = true
+  $reports      = extlookup (foreman_reports,"true")
   # Should foreman recive facts from puppet
-  $facts        = true
+  $facts        = extlookup (foreman_facts,"true")
   # Do you use storeconfig (and run foreman on the same database) ? (note: not required)
-  $storeconfigs = false
+  $storeconfigs = extlookup (foreman_storeconfigs,"false")
   # should foreman manage host provisioning as well
-  $unattended   = true
+  $unattended   = extlookup (foreman_unattended,"true")
   # Enable users authentication (default user:admin pw:changeme)
-  $authentication = false
+  $authentication = extlookup (foreman_authentication,"false")
   # configure foreman via apache and passenger
-  $passenger    = true
+  $passenger    = extlookup (foreman_passenger,"true")
   # force SSL (note: requires passenger)
-  $ssl          = true
+  $ssl          = extlookup (foreman_require_ssl,"true")
 
 # Advance configurations - no need to change anything here by default
   # allow usage of test / RC rpms as well
@@ -28,7 +28,7 @@ class foreman::params {
   $environment = "production"
 
   # OS specific paths
-  case $operatingsystem {
+  case $::operatingsystem {
     redhat,centos,fedora,Scientific: {
        $puppet_basedir  = "/usr/lib/ruby/site_ruby/1.8/puppet"
        $apache_conf_dir = "/etc/httpd/conf.d"

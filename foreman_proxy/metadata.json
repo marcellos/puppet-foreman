@@ -1,0 +1,35 @@
+{
+  "name": "marcellods-foreman_proxy",
+  "author": "Ohad Levy",
+  "description": "",
+  "license": "",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "version": "0.0.2",
+  "checksums": {
+    "Modulefile": "4f8324df61f42ae53c3aa88576d3f10d",
+    "manifests\\config.pp": "ee4aa43894f4e48adb1bc79a24520341",
+    "manifests\\init.pp": "10e72162f93c61f9c843b5b7b857c5f2",
+    "manifests\\install.pp": "ffdacb3f283cea58699637d73c7473cd",
+    "manifests\\params.pp": "84781231d3a03bb8ebfd322d7e322d01",
+    "manifests\\puppetca.pp": "e7acddf69eceee360bfe61759fbae67b",
+    "manifests\\service.pp": "ab51e7b1f59ad78ce3d8559791f01603",
+    "manifests\\tftp.pp": "c1437add8eb13b159a0f5f74ff5e3589",
+    "manifests\\tftp\\manifests\\config.pp": "7ec0b5208752f1f6bd792b735be21a47",
+    "manifests\\tftp\\manifests\\init.pp": "a28f4b0e055dca31fe526d09738f61e3",
+    "manifests\\tftp\\manifests\\install.pp": "df8ea2255f0590c30030848e90a286e3",
+    "manifests\\tftp\\manifests\\params.pp": "860627f3db400b9315a7a31aca3a8b72",
+    "manifests\\xinetd\\manifests\\init.pp": "24e29f637b13e7fb94e0b98bc2709bb5",
+    "manifests\\xinetd\\manifests\\install.pp": "7ae5a48da50570cda910dca592ad59fd",
+    "manifests\\xinetd\\manifests\\service.pp": "c932d13d9f47971aaa349e69a574e278",
+    "templates\\foreman_proxy-settings.yml.erb": "f12b87c2e0ef5ce329db5aefeef23222",
+    "templates\\xinetd-tftp": "e0dd505efc0c36e6ef514cbe9388f91e"
+  },
+  "dependencies": [
+    {
+      "name": "marcellods/foreman",
+      "versionRequirement": "\u003e\u003d0"
+    }
+  ]
+}

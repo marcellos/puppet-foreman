@@ -1,5 +1,5 @@
 class foreman::install::repos {
-  case $operatingsystem {
+  case $::operatingsystem {
     redhat,centos,fedora,Scientific: {
       yumrepo {
         "foreman":
@@ -24,6 +24,6 @@ class foreman::install::repos {
       ~>
       exec { "update-apt": command => "/usr/bin/apt-get update", refreshonly => true }
     }
-    default: { fail("${hostname}: This module does not support operatingsystem $operatingsystem") }
+    default: { fail("${::hostname}: This module does not support operatingsystem $::operatingsystem") }
   }
 }

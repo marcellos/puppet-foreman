@@ -10,7 +10,7 @@ class foreman_proxy::config {
   }
 
   file{"/etc/foreman-proxy/settings.yml":
-    content => template("foreman_proxy/settings.yml.erb"),
+    content => template("foreman_proxy/foreman_proxy-settings.yml.erb"),
     owner   => $foreman_proxy::params::user,
     group   => $foreman_proxy::params::user,
     mode    => 644,
@@ -18,7 +18,7 @@ class foreman_proxy::config {
     notify  => Class["foreman_proxy::service"],
   }
 
-   augeas { "sudo-foreman-proxy":
+   augeas { "sudo-foreman_proxy":
      context => "/files/etc/sudoers",
      changes => [
        "set spec[user = '${foreman_proxy::params::user}']/user ${foreman_proxy::params::user}",
